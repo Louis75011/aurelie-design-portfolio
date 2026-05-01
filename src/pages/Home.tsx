@@ -51,8 +51,8 @@ export default function Home() {
         <div className="w-full md:w-7/12 relative h-[400px] md:h-auto overflow-hidden">
           <img
             src={IMAGES.hero}
-            alt="Aurélie Renier Workspace"
-            className="w-full h-full object-cover grayscale-[20%]"
+            alt="Portrait d'Aurélie Renier"
+            className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-purple/5 mix-blend-overlay" />
@@ -60,10 +60,10 @@ export default function Home() {
       </section>
 
       {/* Featured Portfolio - Grid Layout */}
-      <section className="py-24 px-6 md:px-12 bg-white">
+      <section className="py-24 px-6 md:px-12 bg-white" aria-labelledby="portfolio-heading">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-baseline gap-10 mb-20 pb-10 border-b border-purple/10">
-            <h2 className="text-3xl md:text-5xl font-serif italic text-purple">
+            <h2 id="portfolio-heading" className="text-3xl md:text-5xl font-serif italic text-purple">
               Projets <span className="not-italic text-black">Sélectionnés</span>
             </h2>
             <Link
@@ -93,12 +93,12 @@ export default function Home() {
              whileInView={{ scale: 1, opacity: 1 }}
              viewport={{ once: true }}
           >
-            <Star className="w-12 h-12 text-pink mx-auto mb-10 opacity-50" />
-            <blockquote className="text-3xl md:text-5xl font-serif italic text-purple leading-snug mb-12">
-              "La beauté est la splendeur de la vérité."
+            <Star className="w-12 h-12 text-pink mx-auto mb-10 opacity-50" aria-hidden="true" />
+            <blockquote className="text-3xl md:text-4xl font-serif italic text-purple leading-snug mb-12">
+              « L’art, quand il est digne de ce nom, est une sorte d’échelle qui conduit à Dieu, l’auteur de toute beauté. »
             </blockquote>
             <p className="text-lg text-black/60 uppercase tracking-widest font-medium">
-              — Saint Jean-Paul II
+              — Léon XIII (Allocution aux artistes, 1887)
             </p>
           </motion.div>
         </div>

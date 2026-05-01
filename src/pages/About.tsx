@@ -5,7 +5,7 @@ import { Check } from 'lucide-react';
 export default function About() {
   return (
     <div id="about-page">
-      <section className="py-24 px-6 overflow-hidden">
+      <section className="py-24 px-6 overflow-hidden" aria-labelledby="about-heading">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
@@ -17,13 +17,13 @@ export default function About() {
               <div className="aspect-[4/5] rounded-3xl overflow-hidden border-[12px] border-cream shadow-2xl relative z-10">
                 <img
                   src={IMAGES.profile}
-                  alt="Aurélie Renier"
+                  alt="Portrait d'Aurélie Renier"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-pink/20 rounded-full blur-3xl z-0" />
-              <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-purple/10 rounded-full blur-3xl z-0" />
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-pink/20 rounded-full blur-3xl z-0" aria-hidden="true" />
+              <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-purple/10 rounded-full blur-3xl z-0" aria-hidden="true" />
             </motion.div>
 
             <motion.div
@@ -34,7 +34,7 @@ export default function About() {
               <span className="text-purple uppercase tracking-widest font-medium text-sm mb-6 inline-block">
                 Ma Mission
               </span>
-              <h1 className="text-5xl font-serif leading-tight mb-8">
+              <h1 id="about-heading" className="text-5xl font-serif leading-tight mb-8">
                 Graphiste pour une <br />
                 <span className="italic text-purple">beauté qui témoigne.</span>
               </h1>

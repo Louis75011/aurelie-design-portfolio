@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Cross, Instagram, Linkedin } from 'lucide-react';
+import { SOCIALS } from '../constants';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,11 +10,15 @@ export default function Footer() {
         <div className="flex flex-wrap gap-10 justify-center md:justify-start">
           <div className="flex flex-col">
             <span className="label-caps !text-black opacity-50 mb-1">Instagram</span>
-            <span className="text-xs font-bold tracking-tight">@votre_graphiste_catholique</span>
+            <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" className="text-xs font-bold tracking-tight hover:text-purple">@votre_graphiste_catholique</a>
+          </div>
+          <div className="flex flex-col">
+            <span className="label-caps !text-black opacity-50 mb-1">LinkedIn</span>
+            <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="text-xs font-bold tracking-tight hover:text-purple">Aurélie Renier</a>
           </div>
           <div className="flex flex-col">
             <span className="label-caps !text-black opacity-50 mb-1">Email</span>
-            <span className="text-xs font-bold tracking-tight">contact@aurelie-renier.fr</span>
+            <a href={`mailto:${SOCIALS.email}`} className="text-xs font-bold tracking-tight hover:text-purple">{SOCIALS.email}</a>
           </div>
           <div className="flex flex-col">
             <span className="label-caps !text-black opacity-50 mb-1">Légal</span>
@@ -23,7 +27,7 @@ export default function Footer() {
         </div>
         
         <div className="flex items-center gap-6">
-          <div className="hidden md:block h-px w-24 bg-pink"></div>
+          <div className="hidden md:block h-px w-24 bg-pink" aria-hidden="true"></div>
           <p className="label-caps !text-purple">Travaillons ensemble</p>
         </div>
       </div>

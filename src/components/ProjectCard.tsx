@@ -24,7 +24,7 @@ export default function ProjectCard({ title, category, image, index }: ProjectCa
     >
       <img
         src={image}
-        alt={title}
+        alt={`Projet : ${title}`}
         loading="lazy"
         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-70"
         referrerPolicy="no-referrer"

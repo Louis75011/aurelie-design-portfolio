@@ -13,12 +13,26 @@ export default function Layout({ children }: LayoutProps) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Set Document Title based on path
+    const path = pathname.split('/')[1] || '';
+    const titles: Record<string, string> = {
+      '': 'Accueil | Aurélie Renier',
+      'portfolio': 'Portfolio | Aurélie Renier',
+      'about': 'À Propos | Aurélie Renier',
+      'contact': 'Contact | Aurélie Renier',
+      'legal': 'Mentions Légales | Aurélie Renier',
+    };
+    document.title = titles[path] || 'Aurélie Renier — Graphiste Catholique';
   }, [pathname]);
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-pink selection:text-cream">
-      <Navbar />
-      <main className="flex-grow pt-20">
+      <header>
+        <Navbar />
+      </header>
+      
+      <main id="main-content" className="flex-grow pt-24" tabIndex={-1}>
         <AnimatePresence mode="wait">
           <motion.div
             key={pathname}
@@ -31,6 +45,7 @@ export default function Layout({ children }: LayoutProps) {
           </motion.div>
         </AnimatePresence>
       </main>
+
       <Footer />
     </div>
   );
